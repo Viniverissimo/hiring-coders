@@ -1,24 +1,18 @@
 import logo from './logo.svg';
+import React, { useState } from "react"
 import './App.css';
 
 function App() {
+  const [usuario, setUsuario] = useState("");
+  function handleUsuario(){
+    console.log(usuario)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <p>{usuario}</p> 
+      <input className="usuarioInput" placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)}/>
+      <button class="buttonUser" onClick={handleUsuario}>Pesquisar</button>
+    </>
   );
 }
 
